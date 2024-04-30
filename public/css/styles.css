@@ -4,3 +4,218 @@
 *:after {
   box-sizing: border-box;
 }
+/*General*/
+body {
+  margin: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
+}
+
+/*Wrapper*/
+#wrapper {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 1em;
+  background-color: white;
+}
+
+
+/* HEADER STYLE */
+#top-header {
+  padding: 1.5rem;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.siteName {
+  text-align: left;
+  padding: 1rem;
+}
+.siteName a {
+  color: black;
+  text-decoration: none;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+#tools {
+  text-align: right;
+}
+
+#tools a {
+  color: black;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* END HEADER STYLE */
+
+/* NAVIGATION STYLE */
+
+#main-nav {
+  background-color: black;
+  color: white;
+  padding: 1rem;
+}
+
+#main-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* END NAVIGATION STYLE */
+
+/* HERO STYLE */
+h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: black;
+  padding: .5rem 1rem 1rem .5rem;
+}
+
+.hero {
+
+}
+
+#hero-img {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: 100%;
+}
+
+#hero-img img {
+  width: 100%;
+  height: auto;
+}
+
+.hero-message {
+  position: absolute;
+  top: 22rem;
+  left: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: .5rem;
+}
+
+.hero-message h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #006D6F;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-message p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #006D6F;
+  padding: 0;
+  margin: 0;
+}
+
+#hero-btn {
+  display: block;
+  width: 120px;
+}
+
+#hero-btn img {
+  width: 100%;
+}
+/* END HERO STYLE */
+
+
+/* REVIEWS STYLE */
+.reviews {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-self: start;
+}
+
+.reviews ul {
+  margin: 0;
+}
+
+.reviews li {
+   padding: 0.5rem;
+}
+
+/* END REVIEWS STYLE */
+
+/* UPGRADES STYLES*/
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows:1fr 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem;
+}
+
+.upgrades h2 {
+  text-align: left;
+  padding: 1rem;
+}
+
+.card  {
+  border: 1px solid black;
+  background-color: #006D6F;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 130px;
+}
+
+.card img {
+  width: 98px;
+  height: 95px;
+}
+
+.card p {
+  margin: 0.3rem;
+  color: white;
+}
+
+/* END UPGRADES STYLES*/
+
+@media only screen and (min-width: 768px) {
+  body {
+    background-image: url("../images/site/checkerboard.jpg");
+    background-size: 100px 100px;
+    background-position: 0 0, 0 0, -50px -50px, 50px 50px;
+
+  }
+ 
+  #wrapper {
+    border-radius: 10px;
+    margin-top: 1rem;
+    padding: 1vw;
+    width: 75vw;
+    max-width: 1200px;
+    border: #006D6F 10px solid;
+  }
+
+  .hero-message {
+    position: absolute;
+    top: 26rem;
+    left: 9rem;
+  }
+
+
+  /*GRID MAIN STYLE*/
+  .grid-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin: 0.5rem;
+  }
+}
