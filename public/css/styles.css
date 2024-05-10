@@ -57,13 +57,12 @@ body {
 
 /* NAVIGATION STYLE */
 
-#main-nav {
+nav {
   background-color: black;
-  color: white;
   padding: 1rem;
 }
 
-#main-nav ul {
+nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -71,6 +70,13 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+ul a {
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
 }
 
 /* END NAVIGATION STYLE */
@@ -81,10 +87,6 @@ h1 {
   font-weight: 500;
   color: black;
   padding: .5rem 1rem 1rem .5rem;
-}
-
-.hero {
-
 }
 
 #hero-img {
