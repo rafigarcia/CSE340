@@ -190,6 +190,46 @@ h1 {
 
 /* END UPGRADES STYLES*/
 
+/* INVENTORY SELECTION GRID DECORATION*/
+#inv-display {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1rem;
+  margin: 2rem 0;
+}
+
+#inv-display li {
+  list-style-type: none;
+  border: 1px solid rgba(0, 0 , 0, 0.50);
+  border-radius: 5px;
+  box-shadow: 8px 8px 5px 0px rgba(0, 0, 0, 0.5);
+  width: 200px;
+}
+
+#inv-display li img{
+  width: 100%;
+  border-radius: 5px;
+}
+
+.namePrice {
+  text-align: center;
+  border-radius: 8px;
+}
+
+.namePrice h2 {
+  margin: 0.5rem;
+}
+
+.namePrice h2 a {
+  color: blue;
+  text-decoration: underline;
+}
+
+
+/* END INVENTORY SELECTION GRID DECORATION*/
+
+
+
 @media only screen and (min-width: 768px) {
   body {
     background-image: url("../images/site/checkerboard.jpg");
