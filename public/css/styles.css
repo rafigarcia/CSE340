@@ -233,8 +233,8 @@ h1 {
 }
 
 #vehicle-picture {
-  width: 500px;
-  height: auto;
+  width: 400px;
+  height: 200px;
   border: 1px solid rgba(0, 0 , 0, 0.50);
   border-radius: 10px;
   box-shadow: 8px 8px 5px 0px rgba(0, 0, 0, 0.5);
@@ -247,10 +247,72 @@ h1 {
 }
 
 #vehicle-information {
-  margin: 2rem;
+  margin: 0;
 }
 
 /* END VEHICLE SELECTION STYLE*/
+
+/* FORM STYLE */
+
+form {
+  margin: 1rem auto;
+  padding: 1rem;
+  background-color: #006D6F;
+  border-radius: 1rem;
+  width: 500px;
+  display: grid;
+}
+
+fieldset {
+  border: white solid 3px;
+  padding: 0.5rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+label {
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+input {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.form-control {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.button {
+  margin: 0.5rem auto;
+  color: #006D6F;
+  background-color: #fff;
+  border-radius: .5rem;
+  padding: .75rem;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.button:hover {
+  background-color: #006D6F;
+  color: #fff;
+}
+
+fieldset p {
+  text-align: center;
+}
+
+.link {
+  color: lightgreen;
+}
+/* END FORM STYLE */
 
 
 @media only screen and (min-width: 768px) {
@@ -288,7 +350,7 @@ h1 {
   /* VEHICLE SELECTION STYLE*/
   #vehicle-display {
     display: grid;
-    grid-template-columns: 1fr auto;
-    gap : 1rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
 }
 }
