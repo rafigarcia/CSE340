@@ -15,6 +15,6 @@ async function registerAccount(account_firstname, account_lastname, account_emai
     }
   }
 
-module.export = {
+module.exports = {
   registerAccount
 }
