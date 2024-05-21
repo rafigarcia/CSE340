@@ -18,21 +18,21 @@
     <fieldset>
     <legend>Register</legend> 
         <div class="form-control">
-            <label for="firstname">First Name</label>
-            <input type="text" id="firstname" name="account_firstname" placeholder="Your First name" required>
+            <label for="accountFirstname">First Name</label>
+            <input type="text" id="accountFirstname" name="account_firstname" placeholder="Your First name" required value="<%= locals.account_firstname %>">
         </div>
         <div class="form-control">
-            <label for="lastname">Last Name</label>
-            <input type="text" id="lastname" name="account_lastname" placeholder="Your Last name" required>
+            <label for="accountLastname">Last Name</label>
+            <input type="text" id="accountLastname" name="account_lastname" placeholder="Your Last name" required value="<%= locals.account_firstname %>">
         </div>
         <div class="form-control">
-            <label for="email">Email</label>
-            <input type="email" name="account_email" id="email" placeholder="Email" required>
+            <label for="accountEmail">Email</label>
+            <input type="email" name="account_email" id="accountEmail" placeholder="Email" required value="<%= locals.account_firstname %>">
         </div>
         <div class="form-control">
-            <label for="password">Password</label>
+            <label for="accountPassword">Password</label>
             <span>Passwords must be at least 12 characters and contain at least 1 number, 1 capital letter and 1 special character</span> 
-            <input type="password" id="password" name="account_password" placeholder="Insert your password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$">
+            <input type="password" id="accountPassword" name="account_password" placeholder="Insert your password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$">
         </div>
         <input type="submit" value="Submit" class="button">
     </fieldset>

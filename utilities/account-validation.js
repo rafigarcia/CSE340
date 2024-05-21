@@ -1,5 +1,6 @@
 const utilities = require(".")
 const { body, validationResult } = require("express-validator")
+const acountModel = require("../models/account-model")
 const validate = {}
 
 
@@ -22,7 +23,13 @@ validate.registationRules = () => {
         .escape()
         .notEmpty()
         .isLength({ min: 2 })
-        .withMessage("Please provide a last name."), // on error this message is sent.
+        .withMessage("Please provide a last name.") // on error this message is sent.
+        .custom(async (account_email) => {
+            const emailExists = await accountModel.checkExistingEmail(account_email)
+            if (emailExists){
+              throw new Error("Email exists. Please log in or use different email")
+            }
+          }),
   
       // valid email is required and cannot already exist in the DB
       body("account_email")
@@ -47,6 +54,46 @@ validate.registationRules = () => {
         .withMessage("Password does not meet requirements."),
     ]
   }
+
+/* ******************************
+ * Check data for Login if exists
+ * ***************************** */
+
+validate.checkLoginData = () => {
+    return [
+        // email is required
+      body("account_email")
+        .trim()
+        .escape()
+        .notEmpty()
+        .isEmail()
+        .normalizeEmail()
+        .withMessage("Please provide a valid email address.")
+        .custom(async (account_email) => {
+            const emailExists = await accountModel.checkExistingEmail(account_email)
+            if (emailExists){
+              return next()
+            } else {
+              throw new Error("Email doesn't exists. Please log in or use existent email")
+            }
+          }),
+
+      // password is required
+      body("account_password")
+        .trim()
+        .notEmpty()
+        .withMessage("Please provide your password")
+        .custom(async (account_email, account_password) => {
+            const passwordExists = await accountModel.checkEmailPasswordMatch(account_email, account_password)
+            if (passwordExists){
+              return next()
+            } else {
+              throw new Error("Password doesn't match. Please check your password")
+            }
+          }),
+    ]
+}
+
 
 
 /* ******************************
