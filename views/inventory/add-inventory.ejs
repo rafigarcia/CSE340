@@ -1,0 +1,71 @@
+<% if (title) { %>
+<h1><%= title %></h1>
+<% } else {
+  res.redirect('/')
+} %>
+
+<%# messages() %>
+
+<% if (errors) { %>
+  <ul class="notice">
+ <% errors.array().forEach(error => { %>
+   <li><%= error.msg %></li>
+<%  }) %>
+ </ul>
+<% } %>
+
+<form action="add-vehicle" account="/inv" method="post">
+    <span>ALL FIELDS ARE REQUIRED.</span>
+    <fieldset>
+    <div class="form-control">
+        <label for="classificationName">Classification</label>
+        <input type="text" id="classificationName" name="classification_name" placeholder="Classification" pattern="[A-Za-z0-9]{3,}" minlength="3" required value="<%= locals.classification_name %>">
+    </div>
+    
+    <div class="form-control">
+        <label for="inventoryMake">Make</label>
+        <input type="text" id="inventoryMake" name="inv_make" placeholder="Make" pattern="[A-Za-z0-9]{3,}" minlength="3" required value="<%= locals.inv_make %>">
+    </div>
+    
+    <div class="form-control">
+        <label for="inventoryModel">Model</label>
+        <input type="text" id="inventoryModel" name="inv_model" placeholder="Model" pattern="[A-Za-z0-9]{3,}" minlength="3" required value="<%= locals.inv_model %>">
+    </div>
+
+    <div class="form-control">
+        <label for="inventoryDescription">Description</label>
+        <textarea name="inv_description" id="inventoryDescription" pattern="[A-Za-z0-9]{3,}" minlength="3" required value="<%= locals.inv_description%>">Write your description here.</textarea>
+    </div>
+
+    <div class="form-control">
+        <label for="inventoryImage">Image Path</label>
+        <input type="text" id="inventoryImage" name="inv_image" value="/image/vehicles/no-image.png" pattern="[A-Za-z0-9]{3,}" minlength="1" required">
+    </div>
+
+    <div class="form-control">
+        <label for="inventoryThumbnail">Thumbnail Path</label>
+        <input type="text" id="inventoryThumbnail" name="inv_thumbnail" value="/image/vehicles/no-image.png" pattern="[A-Za-z0-9]{3,}" minlength="1" required">
+    </div>
+
+    <div class="form-control">
+        <label for="inventoryPrice">Price</label>
+        <input type="text" id="inventoryPrice" name="inv_price" placeholder="Price" pattern="[0-9]{1,}" minlength="1" required value="<%= locals.inv_price %>">
+    </div>
+
+    <div class="form-control">
+        <label for="inventoryYear">Year</label>
+        <input type="text" id="inventoryYear" name="inv_year" placeholder="Year" pattern="[0-9]{4,}" minlength="4" maxlength="4" required value="<%= locals.inv_year %>">
+    </div>
+
+    <div class="form-control">
+        <label for="inventoryMiles">Miles</label>
+        <input type="text" id="inventoryMiles" name="inv_miles" placeholder="Miles" pattern="[0-9]{1,}" minlength="1" required value="<%= locals.inv_miles %>">
+    </div>
+
+    <div class="form-control">
+        <label for="inventoryColor">Color</label>
+        <input type="text" id="inventoryColor" name="inv_color" placeholder="Color" pattern="[A-Za-z0-9]{3,}" minlength="3" required value="<%= locals.inv_color %>">
+    </div>
+    <input type="submit" value="Submit" class="button">
+    </fieldset>
+</form>
